@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Контакти та реєстрація у фан-клубі Ярослави Магучіх">
+    <title>Контакти та фан-клуб Ярослави Магучіх</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="contact-body">
+
+    <a href="#top" class="fixed-scroll-top" title="Вгору" aria-label="Вгору">&#8593;</a>
+
+    <header class="contact-header">
+        <h1>Контакти та фан-клуб Ярослави Магучіх</h1>
+
+        <nav class="sticky-nav" aria-label="Навігація по формах">
+            <ul>
+                <li><a href="index.html">← На головну (Біографія)</a></li>
+                <li><a href="#reg-form">Форма реєстрації</a></li>
+                <li><a href="#login-form">Форма входу</a></li>
+                <li><a href="#feedback-form">Форма зворотного зв'язку</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contact-container" id="top">
+
+        <section class="demo-layout clearfix">
+            <div class="float-content">
+                <div class="img-float-left">
+                    <img src="images/yaroslava-portrait.jpg" alt="Підготовка до виступу">
+                </div>
+                
+                <p>
+                    Ярослава Магучіх — символ сучасної української сили, волі та незламності на міжнародній спортивній арені. Її унікальний стиль, легкість польоту над планкою та вміння концентруватися у вирішальні моменти змагань захоплюють мільйони вболівальників у всьому світі.
+                </p>
+
+                <div class="img-float-right">
+                    <img src="images/jump-record.jpg" alt="Стрибок Магучіх">
+                </div>
+                
+                <p>
+                    Кожен успішний виступ — це роки щоденних виснажливих тренувань, філігранна робота з тренерським штабом, біомеханічний аналіз кожного міліметра розбігу та повна самовіддача заради того, щоб на світових аренах майорів синьо-жовтий стяг.
+                </p>
+
+                <div class="img-no-float">
+                    <img src="images/paris-olympics.jpg" alt="Париж 2024">
+                </div>
+            </div>
+
+            <div class="stack-showcase">
+                <div class="card-stack-box">
+                    <div class="stack-card card-top">
+                        <img src="images/yaroslava-portrait.jpg" alt="Ярослава Магучіх">
+                    </div>
+                    <div class="stack-card card-middle">
+                        <img src="images/paris-olympics.jpg" alt="Олімпійське золото">
+                    </div>
+                    <div class="stack-card card-bottom">
+                        <img src="images/jump-record.jpg" alt="Світовий рекорд">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="reg-form" class="form-wrapper">
+            <h2>Форма реєстрації</h2>
+            <form action="/register-endpoint" method="POST" enctype="multipart/form-data" class="grid-form">
+
+                <div class="form-avatar-box">
+                    <div class="avatar-circle">
+                        <img src="images/avatar-placeholder.png" alt="Аватар користувача">
+                    </div>
+                    <label for="user-photo" class="upload-btn">Обрати фото</label>
+                    <input type="file" id="user-photo" name="user_photo" accept="image/png, image/jpeg">
+                </div>
+
+                <div class="form-column">
+                    <div class="form-group">
+                        <label for="first-name">Ім'я:</label>
+                        <input type="text" id="first-name" name="first_name" placeholder="Введіть ім'я" required minlength="2">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="last-name">Прізвище:</label>
+                        <input type="text" id="last-name" name="last_name" placeholder="Введіть прізвище" required>
+                    </div>
+
+                    <fieldset class="form-group-radio">
+                        <legend>Стать:</legend>
+                        <label><input type="radio" name="gender" value="male"> Чоловіча</label>
+                        <label><input type="radio" name="gender" value="female" checked> Жіноча</label>
+                    </fieldset>
+
+                    <div class="form-group">
+                        <label for="user-age">Вік:</label>
+                        <input type="number" id="user-age" name="age" min="10" max="100" value="21">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="birth-date">Дата народження:</label>
+                        <input type="date" id="birth-date" name="birth_date" min="1930-01-01" max="2026-12-31">
+                    </div>
+                </div>
+
+                <div class="form-column">
+                    <div class="form-group">
+                        <label for="user-country">Країна проживання:</label>
+                        <select id="user-country" name="country" required>
+                            <option value="">Оберіть країну проживання</option>
+                            <option value="UA" selected>Україна</option>
+                            <option value="PL">Польща</option>
+                            <option value="FR">Франція</option>
+                            <option value="US">США</option>
+                            <option value="OTHER">Інша країна</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone-number">Номер телефону:</label>
+                        <input type="tel" id="phone-number" name="phone" placeholder="+38(0XX)XXX-XX-XX" pattern="^\+380\d{9}$">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="social-link">Соцмережа:</label>
+                        <input type="url" id="social-link" name="social_url" placeholder="Посилання на профіль (https://...)">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reg-email">Електронна пошта:</label>
+                        <input type="email" id="reg-email" name="email" placeholder="example@mail.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reg-password">Пароль:</label>
+                        <input type="password" id="reg-password" name="password" minlength="8" placeholder="Не менше 8 символів" required>
+                    </div>
+
+                    <div class="form-group-checkbox">
+                        <input type="checkbox" id="terms" name="terms_agreement" required>
+                        <label for="terms">Чи згодні Ви з умовами?</label>
+                    </div>
+                </div>
+
+                <div class="form-buttons-row">
+                    <button type="submit" class="btn btn-primary">Зареєструватися</button>
+                    <button type="reset" class="btn btn-secondary">Відміна</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="login-form" class="form-wrapper login-section">
+            <h2>Форма входу:</h2>
+            <form action="/login-endpoint" method="POST" class="simple-card-form">
+                <div class="form-group">
+                    <label for="login-username">Логін:</label>
+                    <input type="text" id="login-username" name="username" placeholder="Ваш логін або email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-pass">Пароль:</label>
+                    <input type="password" id="login-pass" name="password" required>
+                </div>
+                <div class="form-group center-btn">
+                    <button type="submit" class="btn btn-login">Вхід</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="feedback-form" class="form-wrapper feedback-section">
+            <h2>Форма зворотнього зв'язку:</h2>
+            <form action="/feedback-endpoint" method="POST" class="feedback-grid">
+                <div class="feedback-left">
+                    <div class="form-group">
+                        <label for="fb-name">Ім'я:</label>
+                        <input type="text" id="fb-name" name="sender_name" placeholder="Ваше ім'я" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fb-email">Ел. пошта:</label>
+                        <input type="email" id="fb-email" name="sender_email" placeholder="Ел. пошта" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fb-topic">Тема повідомлення:</label>
+                        <select id="fb-topic" name="message_topic">
+                            <option value="fan">Привітання та підтримка</option>
+                            <option value="media">Запит на інтерв'ю від преси</option>
+                            <option value="sponsorship">Співпраця та спонсорство</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-feedback">Відправити</button>
+                </div>
+                <div class="feedback-right">
+                    <label for="fb-msg">Повідомлення:</label>
+                    <textarea id="fb-msg" name="message_text" rows="8" placeholder="Введіть текст вашого листа тут..." required></textarea>
+                </div>
+            </form>
+        </section>
+
+        <footer class="contact-footer">
+            <div class="social-links-bar">
+                <span class="social-title">Посилання на соц.мережі:</span>
+                <div class="social-circles">
+
+                    <a href="https://www.instagram.com/rosya_dp/" target="_blank" rel="noopener noreferrer" class="circle-btn" title="Instagram">
+                        <img src="images/instagram.jpg" alt="Instagram" class="social-png">
+                    </a>
+
+                    <a href="https://www.facebook.com/Mahuchikh" target="_blank" rel="noopener noreferrer" class="circle-btn" title="Facebook">
+                        <img src="images/facebook.png" alt="Facebook" class="social-png">
+                    </a>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>
+            Copyright &copy; 2026 | 
+            mob: <a href="tel:+380670000000">+38 (067) 000-00-00</a> | 
+            email: <a href="mailto:press@yaroslava.ua">press@yaroslava.ua</a> | 
+            skype: yaroslava.fanclub
+        </p>
+    </footer>
+</body>
+</html>
